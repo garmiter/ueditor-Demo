@@ -11077,8 +11077,33 @@ UE.commands['imagefloat'] = {
 
 
     /**
-     * 跨域插入图片 Create by Garmiter@qq.com
+     * 插入图片 by Garmiter
      * @command uploadimage 
+     * @method execCommand
+     * @param { String } cmd 命令字符串
+     * @param { Object } opt 属性键值对，这些属性都将被复制到当前插入图片
+     * @remind 该命令第二个参数可接受一个图片配置项对象的数组，可以插入多张图片，
+     * 此时数组的每一个元素都是一个Object类型的图片属性集合。
+     * @example
+     * ```javascript
+     * editor.execCommand( 'insertimage', {
+     *     src:'a/b/c.jpg',
+     *     width:'100',
+     *     height:'100'
+     * } );
+     * ```
+     * @example
+     * ```javascript
+     * editor.execCommand( 'insertimage', [{
+     *     src:'a/b/c.jpg',
+     *     width:'100',
+     *     height:'100'
+     * },{
+     *     src:'a/b/d.jpg',
+     *     width:'100',
+     *     height:'100'
+     * }] );
+     * ```
      */
 
 UE.commands['uploadimage'] = {
